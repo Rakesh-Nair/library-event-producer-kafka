@@ -1,4 +1,4 @@
-package com.learnkafka.library_event_producer;
+package com.learnkafka.libraryEventProducer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
