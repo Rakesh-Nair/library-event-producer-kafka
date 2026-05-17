@@ -13,6 +13,8 @@ import com.learnkafka.domain.LibraryEvent;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.concurrent.ExecutionException;
+
 @Slf4j
 @RestController
 public class LibraryEventsController {
@@ -25,10 +27,12 @@ public class LibraryEventsController {
 	
 	@PostMapping("/v1/libraryevent")
 	public ResponseEntity<LibraryEvent> postLibraryEvent(
-			@RequestBody LibraryEvent libraryEvent) throws JsonProcessingException {
+			@RequestBody LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException {
 				
 		//Post Library Event to Kafka
-		libraryEventsProducer.sendLibraryEvent(libraryEvent);
+		//libraryEventsProducer.sendLibraryEvent(libraryEvent);
+		//libraryEventsProducer.sendLibraryEventApproach2(libraryEvent);
+		libraryEventsProducer.sendLibraryEvent_approach3(libraryEvent);
 		log.info("Library Event : {} ",libraryEvent);
 		return ResponseEntity.status(HttpStatus.CREATED).body(libraryEvent);
 		
