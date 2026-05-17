@@ -20,7 +20,7 @@ public class LibraryEventsController {
 			@RequestBody LibraryEvent libraryEvent){
 				
 		//Post Library Event to Kafka
-		log.info("Library Event Posted "+libraryEvent);
+		log.info("Library Event : {} ",libraryEvent);
 		return ResponseEntity.status(HttpStatus.CREATED).body(libraryEvent);
 		
 		
