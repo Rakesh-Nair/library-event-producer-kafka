@@ -31,8 +31,8 @@ public class LibraryEventsController {
 				
 		//Post Library Event to Kafka
 		//libraryEventsProducer.sendLibraryEvent(libraryEvent);
-		//libraryEventsProducer.sendLibraryEventApproach2(libraryEvent);
-		libraryEventsProducer.sendLibraryEvent_approach3(libraryEvent);
+		libraryEventsProducer.sendLibraryEventApproach2(libraryEvent);
+		//libraryEventsProducer.sendLibraryEvent_approach3(libraryEvent);
 		log.info("Library Event : {} ",libraryEvent);
 		return ResponseEntity.status(HttpStatus.CREATED).body(libraryEvent);
 		
